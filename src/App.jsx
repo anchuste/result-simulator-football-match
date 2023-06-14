@@ -12,9 +12,11 @@ function App() {
 
     if (result == true) return;
 
-    console.log("Vamos a generar el resultado: ", result);
     
-    getMediaTeamPoints(result);
+    
+    setMediaTeamPoints(result);
+
+    console.log("Resultado generado: ", result);
 
     
   };
@@ -77,12 +79,30 @@ function App() {
 
   }
 
-  const getMediaTeamPoints = (result) =>{
-
+  const setMediaTeamPoints = (result) =>{
 
     let differenceBetweenTeams = Math.abs(result.mediaTeam1 - result.mediaTeam2);
 
     console.log("La diferencia de la media de los equipos es: ", differenceBetweenTeams);
+
+    if (differenceBetweenTeams == 0){
+      result.pointsTeam1.media = 2.25;
+      result.pointsTeam2.media = 2.25;
+      return;
+    }
+
+    if (result.mediaTeam1 > result.mediaTeam2){
+      switch(differenceBetweenTeams) {
+        case 1:
+          // code block
+          break;
+        case 2:
+          // code block
+          break;
+        default:
+          // code block
+      }
+    }
 
 
   }
